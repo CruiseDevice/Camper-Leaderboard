@@ -5,10 +5,24 @@
 .App-header {
   background-color: #006400;
   height: 15px;
-  padding: 20px;
+  padding: 10px 10px 30px 4px;
   color: white;
+  font-size: large;
 }
 
 .App-intro {
   font-size: large;
+}
+html,body{
+  background-color: grey;
+}
+.leaderboard_title{
+  text-align: center;
+  padding-top: 10px;
+  margin: 50px 90px ;
+  padding-bottom: 10px;
+  background-color: #006400;
+  color:white;
+  font-size: large;
+  border-radius: 5px;
 }

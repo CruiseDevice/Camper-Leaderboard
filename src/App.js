@@ -15,6 +15,9 @@ class App extends Component {
         <div className="App-header">
           freeCodeCamp <img src = {logo.fire_svg} height = {logo.height} width = {logo.width} />
         </div>
+        <div className = "leaderboard_title">
+          Leaderboard
+        </div>
       </div>
     );
   }
