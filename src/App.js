@@ -12,15 +12,30 @@ var logo={
   display: 'inline-block'
 }
 
+const list = [
+  {
+    alltime:4457,
+    img:"https://avatars1.githubusercontent.com/u/11348778?v=3",
+    lastupdate:"2017-03-17T17:49:57.266Z",
+    recent:570,
+    username:"Manish-Giri"
+  }
+]
+
 class App extends Component {
   constructor(props){
     super(props);
+    this.state={
+      list,
+      result:null
+    }
     // this.onChange = this.onChange.bind(this);
     this.fetchData = this.fetchData.bind(this);
     this.result_function = this.result_function.bind(this);
 
   }
   result_function(result){
+    this.setState({result});
     console.log(result);
   }
   fetchData(url){
@@ -34,6 +49,10 @@ class App extends Component {
     this.fetchData(url);
   }
   render() {
+    const {result} = this.state;
+    if(!result){
+      return null;
+    }
     return (
       <div className="App">
         <div className="App-header">
@@ -42,34 +61,39 @@ class App extends Component {
         <div className="leaderboard_title">
           Leaderboard
         </div>
-
+        {
+          result
+          ? <Table
+            list={result}
+            />
+          :null
+        }
       </div>
     );
   }
 }
 
-// class Tables extends Component{
-//   render(){
-//     return(
-//       <div>
-//         <thead>
-//           <tr>
-//             <th>#</th>
-//             <th>First Name</th>
-//             <th>Last Name</th>
-//             <th>Username</th>
-//           </tr>
-//         </thead>
-//         <tbody>
-//           <tr>
-//             <td>1</td>
-//             <td>Mark</td>
-//             <td>Otto</td>
-//             <td>@mdo</td>
-//           </tr>
-//         </tbody>
-//     </div>
-//     );
-//   }
-// }
+const Table = ({list}) =>
+      <div>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Camper Name</th>
+            <th>Points in Last 30 days</th>
+            <th>All time Points</th>
+          </tr>
+        </thead>
+        {list.map(item=>
+          <tbody>
+            <tr>
+              <img src = {item.src}/>
+              <td>{item.username}</td>
+              <td>{item.recent}</td>
+              <td>{item.alltime}</td>
+            </tr>
+          </tbody>
+        )}
+
+    </div>
+
 export default App;
