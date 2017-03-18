@@ -29,7 +29,6 @@ class App extends Component {
       list,
       result:null
     }
-    // this.onChange = this.onChange.bind(this);
     this.fetchData = this.fetchData.bind(this);
     this.result_function = this.result_function.bind(this);
 
@@ -86,14 +85,12 @@ const Table = ({list}) =>
         {list.map(item=>
           <tbody>
             <tr>
-              <img src = {item.src}/>
               <td>{item.username}</td>
               <td>{item.recent}</td>
               <td>{item.alltime}</td>
             </tr>
           </tbody>
         )}
-
     </div>
 
 export default App;
