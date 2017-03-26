@@ -11,7 +11,10 @@ var logo={
   alt:"FCC_logo",
   display: 'inline-block'
 }
-
+var profile_pic = {
+  height:100,
+  width:100
+}
 const list = [
   {
     alltime:4457,
@@ -85,6 +88,7 @@ const Table = ({list}) =>
         {list.map(item=>
           <tbody>
             <tr>
+              <td><img src = {item.img} alt="" height={profile_pic.height} width={profile_pic.width}></img></td>
               <td>{item.username}</td>
               <td>{item.recent}</td>
               <td>{item.alltime}</td>
