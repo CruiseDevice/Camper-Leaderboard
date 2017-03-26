@@ -76,7 +76,7 @@ class App extends Component {
 }
 
 const Table = ({list}) =>
-      <div>
+      <div className = "leaderboard">
         <thead>
           <tr>
             <th>#</th>
@@ -85,6 +85,7 @@ const Table = ({list}) =>
             <th>All time Points</th>
           </tr>
         </thead>
+        
         {list.map(item=>
           <tbody>
             <tr>
