@@ -86,7 +86,7 @@ class App extends Component {
 const Table = ({list}) =>
       <div className = "leaderboard row">
         <div className  = "col-md-12">
-          <table className = "table table-bordered">
+          <table className = "table table-bordered table table-striped">
             <thead>
               <tr>
                 <th>#</th>
