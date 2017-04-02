@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 import './App.css';
 
 var url  = 'https://fcctop100.herokuapp.com/api/fccusers/top/recent';
@@ -13,7 +14,8 @@ var logo={
 }
 var profile_pic = {
   height:100,
-  width:100
+  width:100,
+  user_profile:'https://www.freecodecamp.com/'
 }
 const list = [
   {
@@ -25,6 +27,9 @@ const list = [
   }
 ]
 
+var data = [
+
+]
 class App extends Component {
   constructor(props){
     super(props);
@@ -85,12 +90,11 @@ const Table = ({list}) =>
             <th>All time Points</th>
           </tr>
         </thead>
-        
         {list.map(item=>
           <tbody>
             <tr>
-              <td><img src = {item.img} alt="" height={profile_pic.height} width={profile_pic.width}></img></td>
-              <td>{item.username}</td>
+              <td><a href = {profile_pic.user_profile + item.username}><img src = {item.img} alt="" height={profile_pic.height} width={profile_pic.width}></img></a></td>
+              <td><a href = {profile_pic.user_profile + item.username}>{item.username}</a></td>
               <td>{item.recent}</td>
               <td>{item.alltime}</td>
             </tr>
