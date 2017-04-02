@@ -95,8 +95,8 @@ const Table = ({list}) =>
             {list.map(item=>
               <tbody>
                 <tr>
-                  <td><a href = {profile_pic.user_profile + item.username}><img src = {item.img} alt="" height={profile_pic.height} width={profile_pic.width}></img></a></td>
-                  <td><a href = {profile_pic.user_profile + item.username}>{item.username}</a></td>
+                  <td></td>
+                  <td><a href = {profile_pic.user_profile + item.username}><img className = "user_profile_pic" src = {item.img} alt="" height={profile_pic.height} width={profile_pic.width}></img></a><a href = {profile_pic.user_profile + item.username}>{item.username}</a></td>
                   <td>{item.recent}</td>
                   <td>{item.alltime}</td>
                 </tr>
