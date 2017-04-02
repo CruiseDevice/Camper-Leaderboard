@@ -27,9 +27,6 @@ const list = [
   }
 ]
 
-var data = [
-
-]
 class App extends Component {
   constructor(props){
     super(props);
@@ -43,7 +40,13 @@ class App extends Component {
   }
   result_function(result){
     this.setState({result});
+    this.numbers(result)
     console.log(result);
+  }
+  numbers(result){
+    for(var i = 1; i < result.length+1; i++){
+      console.log(i);
+    }
   }
   fetchData(url){
   fetch(url)
@@ -95,7 +98,7 @@ const Table = ({list}) =>
             {list.map(item=>
               <tbody>
                 <tr>
-                  <td></td>
+                  <td>{}</td>
                   <td><a href = {profile_pic.user_profile + item.username}><img className = "user_profile_pic" src = {item.img} alt="" height={profile_pic.height} width={profile_pic.width}></img></a><a href = {profile_pic.user_profile + item.username}>{item.username}</a></td>
                   <td>{item.recent}</td>
                   <td>{item.alltime}</td>
