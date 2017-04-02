@@ -38,11 +38,12 @@ html,body{
   font-size: large;
   border-radius: 5px;
   position: relative;
-  
+
 }
 .user_profile_pic{
   padding: 10px;
   margin-right: 40px;
+  border: solid 5px green;
 }
 td{
   position: relative;
