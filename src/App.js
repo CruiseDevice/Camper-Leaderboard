@@ -81,25 +81,29 @@ class App extends Component {
 }
 
 const Table = ({list}) =>
-      <div className = "leaderboard">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Camper Name</th>
-            <th>Points in Last 30 days</th>
-            <th>All time Points</th>
-          </tr>
-        </thead>
-        {list.map(item=>
-          <tbody>
-            <tr>
-              <td><a href = {profile_pic.user_profile + item.username}><img src = {item.img} alt="" height={profile_pic.height} width={profile_pic.width}></img></a></td>
-              <td><a href = {profile_pic.user_profile + item.username}>{item.username}</a></td>
-              <td>{item.recent}</td>
-              <td>{item.alltime}</td>
-            </tr>
-          </tbody>
-        )}
+      <div className = "leaderboard row">
+        <div className  = "col-md-12">
+          <table className = "table table-bordered">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th className = "col-md-4">Camper Name</th>
+                <th>Points in Last 30 days</th>
+                <th>All time Points</th>
+              </tr>
+            </thead>
+            {list.map(item=>
+              <tbody>
+                <tr>
+                  <td><a href = {profile_pic.user_profile + item.username}><img src = {item.img} alt="" height={profile_pic.height} width={profile_pic.width}></img></a></td>
+                  <td><a href = {profile_pic.user_profile + item.username}>{item.username}</a></td>
+                  <td>{item.recent}</td>
+                  <td>{item.alltime}</td>
+                </tr>
+              </tbody>
+            )}
+          </table>
+        </div>
     </div>
 
 export default App;
