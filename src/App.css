@@ -37,8 +37,16 @@ html,body{
   color:white;
   font-size: large;
   border-radius: 5px;
+  position: relative;
+  
 }
 .user_profile_pic{
   padding: 10px;
   margin-right: 40px;
+}
+td{
+  position: relative;
+  width: 80px;
+  height: 80px;
+  text-align: left;
 }
