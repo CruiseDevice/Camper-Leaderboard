@@ -32,11 +32,12 @@ class App extends Component {
     super(props);
     this.state={
       list,
-      result:null
+      result:null,
+
     }
     this.fetchData = this.fetchData.bind(this);
     this.result_function = this.result_function.bind(this);
-
+    this.numbers = this.numbers.bind(this);
   }
   result_function(result){
     this.setState({result});
@@ -47,6 +48,7 @@ class App extends Component {
     for(var i = 1; i < result.length+1; i++){
       console.log(i);
     }
+
   }
   fetchData(url){
   fetch(url)
@@ -89,7 +91,6 @@ const Table = ({list}) =>
           <table className = "table table-bordered table table-striped">
             <thead>
               <tr>
-                <th>#</th>
                 <th className = "col-md-4">Camper Name</th>
                 <th>Points in Last 30 days</th>
                 <th>All time Points</th>
@@ -98,7 +99,6 @@ const Table = ({list}) =>
             {list.map(item=>
               <tbody>
                 <tr>
-                  <td>{}</td>
                   <td><a href = {profile_pic.user_profile + item.username}><img className = "user_profile_pic" src = {item.img} alt="" height={profile_pic.height} width={profile_pic.width}></img></a><a href = {profile_pic.user_profile + item.username}>{item.username}</a></td>
                   <td>{item.recent}</td>
                   <td>{item.alltime}</td>
