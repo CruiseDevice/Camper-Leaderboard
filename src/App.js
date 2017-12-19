@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 import './App.css';
 
-var url  = 'https://fcctop100.herokuapp.com/api/fccusers/top/recent';
+var url ='https://fcctop100.herokuapp.com/api/fccusers/top/recent';
 console.log(url);
 
 var logo={
@@ -12,12 +11,12 @@ var logo={
   alt:"FCC_logo",
   display: 'inline-block'
 }
-var profile_pic = {
+var profile_pic={
   height:100,
   width:100,
   user_profile:'https://www.freecodecamp.com/'
 }
-const list = [
+const list=[
   {
     alltime:4457,
     img:"https://avatars1.githubusercontent.com/u/11348778?v=3",
@@ -35,9 +34,9 @@ class App extends Component {
       result:null,
 
     }
-    this.fetchData = this.fetchData.bind(this);
-    this.result_function = this.result_function.bind(this);
-    this.numbers = this.numbers.bind(this);
+    this.fetchData=this.fetchData.bind(this);
+    this.result_function=this.result_function.bind(this);
+    this.numbers=this.numbers.bind(this);
   }
   result_function(result){
     this.setState({result});
@@ -45,7 +44,7 @@ class App extends Component {
     console.log(result);
   }
   numbers(result){
-    for(var i = 1; i < result.length+1; i++){
+    for(var i=1; i < result.length+1; i++){
       console.log(i);
     }
 
@@ -61,7 +60,7 @@ class App extends Component {
     this.fetchData(url);
   }
   render() {
-    const {result} = this.state;
+    const {result}=this.state;
     if(!result){
       return null;
     }
@@ -87,13 +86,13 @@ class App extends Component {
 
 
 const Table = ({list}) =>
-      <div className = "leaderboard row">
-        <div className  = "col-md-12">
-          <table className = "table table-bordered table table-striped">
+      <div className="leaderboard row">
+        <div className="col-md-12">
+          <table className="table table-bordered table table-striped">
             <thead>
               <tr>
                 <th>#</th>
-                <th className = "col-md-4">Camper Name</th>
+                <th className="col-md-4">Camper Name</th>
                 <th>Points in Last 30 days</th>
                 <th>All time Points</th>
               </tr>
@@ -104,7 +103,7 @@ const Table = ({list}) =>
                   <td >
                     {i+1}
                   </td>
-                  <td><a href = {profile_pic.user_profile + item.username}><img className = "user_profile_pic" src = {item.img} alt="" height={profile_pic.height} width={profile_pic.width}></img></a><a href = {profile_pic.user_profile + item.username}>{item.username}</a></td>
+                  <td><a href={profile_pic.user_profile + item.username}><img className="user_profile_pic" src={item.img} alt="" height={profile_pic.height} width={profile_pic.width}></img></a><a href={profile_pic.user_profile + item.username}>{item.username}</a></td>
                   <td>{item.recent}</td>
                   <td>{item.alltime}</td>
                 </tr>
