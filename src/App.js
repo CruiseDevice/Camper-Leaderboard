@@ -85,25 +85,31 @@ class App extends Component {
   }
 }
 
+
 const Table = ({list}) =>
       <div className = "leaderboard row">
         <div className  = "col-md-12">
           <table className = "table table-bordered table table-striped">
             <thead>
               <tr>
+                <th>#</th>
                 <th className = "col-md-4">Camper Name</th>
                 <th>Points in Last 30 days</th>
                 <th>All time Points</th>
               </tr>
             </thead>
-            {list.map(item=>
+            {list.map((item,i) =>
               <tbody>
                 <tr>
+                  <td >
+                    {i+1}
+                  </td>
                   <td><a href = {profile_pic.user_profile + item.username}><img className = "user_profile_pic" src = {item.img} alt="" height={profile_pic.height} width={profile_pic.width}></img></a><a href = {profile_pic.user_profile + item.username}>{item.username}</a></td>
                   <td>{item.recent}</td>
                   <td>{item.alltime}</td>
                 </tr>
               </tbody>
+
             )}
           </table>
         </div>
